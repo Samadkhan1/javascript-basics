@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .container{
+        width: 100%;
+        background-color: gray;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    input{
+        padding: 8px;
+        border: none;
+    }
+    button{
+        margin-left: 3px;
+        padding: 8px;
+        background-color: goldenrod;
+        border: none;
+    }
+</style>
+<body>
+    <div class="container">
+        <input id="input" type="text">
+        <button id="button" onclick="greet()">Greet</button>
+    </div>
+</body>
+<script>
+    function greet() {
+        var name = document.getElementById("input").value;
+            alert("hello "+ name)
+        
+    }
+</script>
+</html>
