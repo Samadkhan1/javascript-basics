@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Largest Number</title>
+  </head>
+  <style>
+    body{
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+    }
+    .container{
+        height: 100vh;
+        background-color: gray;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    input{
+        margin: 5px;
+        padding: 8px;
+        font-size: 20px;
+        border: none;
+    }
+    button{
+        padding: 8px 15px;
+        background-color: coral;
+        border: none;
+        margin: 5px;
+    }
+    .output{
+        color: white;
+    }
+</style>
+  <body>
+    <div class="container">
+    <input type="number" id="num1" />
+    <input type="number" id="num2" />
+    <input type="number" id="num3" />
+    <button onclick="find()">Find the largest number</button>
+    <p class="output">Largest number is <span id="output"></span></p>
+    </div>
+  </body>
+  <script>
+    function find() {
+      let num1 = document.getElementById("num1").value;
+      let num2 = document.getElementById("num2").value;
+      let num3 = document.getElementById("num3").value;
+      let largestNumber = Math.max(Number(num1), Number(num2), Number(num3));
+      document.getElementById("output").innerHTML=largestNumber
+    }
+  </script>
+</html>
