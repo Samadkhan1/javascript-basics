@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Factorial</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+      color: white;
+    }
+    .container {
+      height: 100vh;
+      background-color: gray;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    input {
+      margin: 5px;
+      padding: 8px;
+      font-size: 20px;
+      border: none;
+    }
+    button {
+      padding: 8px 15px;
+      background-color: coral;
+      border: none;
+      margin: 5px;
+    }
+    .output {
+      color: white;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <input type="number" id="num" placeholder="Enter a number " />
+      <button onclick="findFactorial()">Find Factorial</button>
+      <p id="output"></p>
+    </div>
+  </body>
+  <script>
+    function find(num) {
+      let number = num;
+      let factorial = 1;
+      for (let f = number; f >= 1; f--) {
+        factorial *= f;
+      }
+      return factorial;
+    }
+    function findFactorial() {
+      let number = Number(document.getElementById("num").value);
+      let output = find(number);
+      document.getElementById(
+        "output"
+      ).innerHTML = `Factorial of ${number} is ${output}`;
+    }
+  </script>
+</html>
