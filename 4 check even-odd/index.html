@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check even/odd</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+    }
+    .container {
+      height: 100vh;
+      background-color: gray;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    input {
+      margin: 5px;
+      padding: 8px;
+      font-size: 20px;
+      border: none;
+    }
+    button {
+      padding: 8px 15px;
+      background-color: coral;
+      border: none;
+      margin: 5px;
+    }
+    .output {
+      color: white;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <input type="number" id="input" />
+      <button onclick="check()">Check</button>
+      <p class="output">The number is <span id="output"></span></p>
+    </div>
+  </body>
+  <script>
+    function check(params) {
+      let number = document.getElementById("input").value;
+      if (number % 2 === 0) {
+        document.getElementById("output").innerHTML = "Even";
+      } else {
+        document.getElementById("output").innerHTML = "Odd";
+      }
+    }
+  </script>
+</html>
