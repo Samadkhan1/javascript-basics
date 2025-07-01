@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum of array</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+    }
+    .container {
+      height: 100vh;
+      background-color: gray;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    input {
+      margin: 5px;
+      padding: 8px;
+      font-size: 20px;
+      border: none;
+    }
+    button {
+      padding: 8px 15px;
+      background-color: coral;
+      border: none;
+      margin: 5px;
+    }
+    #output {
+      color: white;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <p id="array"></p>
+      <button onclick="count()">Sum of array</button>
+      <h4 id="output"></h4>
+    </div>
+  </body>
+  <script>
+    let numbers = [1, 2, 3, 4, 5, 3, 4, 5, 2, 3, 4, 3, 3, 34, 43];
+    document.getElementById("array").innerHTML = numbers;
+    function count() {
+      let sum = numbers.reduce((num1, num2) => {
+        return num1 + num2;
+      });
+     document.getElementById("output").innerHTML=`sum of the above array is ${sum}`
+    }
+  </script>
+</html>
