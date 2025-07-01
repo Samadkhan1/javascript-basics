@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+    }
+    .container {
+      height: 100vh;
+      background-color: gray;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    input {
+      margin: 5px;
+      padding: 8px;
+      font-size: 20px;
+      border: none;
+    }
+    button {
+      padding: 8px 15px;
+      background-color: coral;
+      border: none;
+      margin: 5px;
+    }
+    #output {
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    #array {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    #employe {
+      list-style: none;
+      background-color: rgb(241, 150, 117);
+      margin: 5px;
+      padding: 10px 10px;
+      text-align: center;
+      border-radius: 10px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div id="array"></div>
+      <button onclick="find()">Find Largest</button>
+      <h4 id="output"></h4>
+    </div>
+  </body>
+  <script>
+    const numbers = [
+      1, 2, 3, 4, 5, 6, 7, 8, 6, 4, 3, 4, 3, 43, 43, 34, 32, 35, 3, 42, 422, 34,
+      3,
+    ];
+    let html = numbers.map((num) => `<li id="employe">${num}</li>`).join(" ");
+    document.getElementById("array").innerHTML = html;
+    function find() {
+      let largestNumber = Math.max(...numbers);
+      console.log(largestNumber);
+      document.getElementById("output").innerHTML = largestNumber;
+    }
+  </script>
+</html>
