@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+    }
+    .container {
+      height: 100vh;
+      background-color: gray;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    input {
+      margin: 5px;
+      padding: 8px;
+      font-size: 20px;
+      border: none;
+    }
+    button {
+      padding: 8px 15px;
+      background-color: coral;
+      border: none;
+      margin: 5px;
+    }
+    #output {
+      color: white;
+    }
+    #array {
+      display: flex;
+    }
+    #employe {
+      list-style: none;
+      background-color: rgb(241, 150, 117);
+      margin: 5px;
+      padding: 10px 10px;
+      text-align: center;
+      border-radius: 10px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div id="array"></div>
+      <input type="text" id="input" placeholder="Search" />
+      <button onclick="Search()">Search</button>
+      <h4 id="output"></h4>
+    </div>
+  </body>
+  <script>
+    const employees = [
+      "ali",
+      "ahmed",
+      "kamran",
+      "rayyan",
+      "imranKhan",
+      "jinnah",
+      "usman",
+      "ertugrul",
+      "muhammad",
+    ];
+    let html = employees
+      .map((employe) => `<li id="employe">${employe}</li>`)
+      .join(" ");
+    document.getElementById("array").innerHTML = html;
+    function Search() {
+      let searchedEmploye = document.getElementById("input").value;
+      let employe = employees.find((emp) => emp.startsWith(searchedEmploye));
+      if (!employe) {
+        document.getElementById("output").innerHTML =
+          "the employe you are searching for is not in the data";
+      } else {
+        document.getElementById("output").innerHTML = employe;
+      }
+    }
+  </script>
+</html>
